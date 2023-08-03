@@ -4,6 +4,7 @@
   "description": "This project aims at creating a discord bot whose functionalities will be decided througout the project itself",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node src/Bot.ts",
     "test": "test"
   },
   "repository": {
@@ -20,5 +21,9 @@
     "@types/node": "^20.4.5",
     "discord.js": "^14.12.1",
     "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.1"
   }
 }
