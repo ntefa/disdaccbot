@@ -2,9 +2,12 @@
   "name": "disdaccbot",
   "version": "1.0.0",
   "description": "This project aims at creating a discord bot whose functionalities will be decided througout the project itself",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "ts-node src/Bot.ts",
+    "build": "tsc",
+    "start": "node build index.js",
+    "dev": "concurrently \"tsc -w\" \"nodemon build/index.js\"",
+    "deploy:commands" : "tsc & node build/deploy-commands.js",
     "test": "test"
   },
   "repository": {

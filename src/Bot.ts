@@ -1,4 +1,5 @@
-import { Client, CommandInteraction, GatewayIntentBits, } from "discord.js";
+import { Client, CommandInteraction, GatewayIntentBits } from "discord.js";
+import config from "./config";
 import ready from "./listeners/ready";
 import interactionCreate from "./listeners/interactionCreate";
 
@@ -13,12 +14,22 @@ const token = process.env.DISCORD_BOT_TOKEN;
 
 console.log("Bot is starting...");
 
-const client = new Client({
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
+export const client = new Client({
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages]
 });
 
-
 ready(client);
+
+client.on("interactionCreate",async (interaction) => {
+    if (!interaction.isCommand()) {
+        return
+    }
+    const {commandName} = interaction;
+    if (commandName == "ping") {
+        interaction.reply("pong");
+        return
+    }
+})
 interactionCreate(client);
 
 
@@ -41,6 +52,6 @@ interactionCreate(client);
 // interactionCreate(client);
 
 
-client.login(token);
+client.login(config.DISCORD_BOT_TOKEN);
 
 // console.log(client);
