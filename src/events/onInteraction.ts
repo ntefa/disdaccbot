@@ -1,7 +1,7 @@
 import { Interaction } from "discord.js";
 import { CustomClient } from "../interfaces/client";
 
-export default async (client: CustomClient) => {
+export async function onInteraction(client: CustomClient) {
   // Listen for interactions
   client.on('interactionCreate', async (interaction: Interaction) => {
     // Check if the interaction is a command

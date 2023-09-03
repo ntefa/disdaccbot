@@ -1,6 +1,5 @@
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
-import ready from "./events/ready";
-import onInteraction from "./events/onInteraction";
+import { events } from "./events";
 import { CustomClient } from "./interfaces/client";
 import { commands } from "./commands";
 import { config } from 'dotenv';
@@ -27,8 +26,7 @@ for (let commandName in commands) {
 }
 
 // Register ready and interaction event handlers
-ready(client);
-onInteraction(client);
-
+events.ready(client);
+events.onInteraction(client)
 // Log in to Discord with your client's token
 client.login(token);
