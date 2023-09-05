@@ -1,11 +1,13 @@
+
+import { config } from 'dotenv';
+// Load the .env file
+config();
+
+// Import other libraries after config so that variables are set
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { events } from "./events";
 import { CustomClient } from "./interfaces/client";
 import { commands } from "./commands";
-import { config } from 'dotenv';
-
-// Load the .env file
-config();
 
 // Access the token
 const token = process.env.DISCORD_BOT_TOKEN;
@@ -30,3 +32,5 @@ events.ready(client);
 events.onInteraction(client)
 // Log in to Discord with your client's token
 client.login(token);
+
+

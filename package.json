@@ -1,10 +1,10 @@
-{
+{ "type": "commonjs",
   "name": "disdaccbot",
   "version": "1.0.0",
   "description": "This project aims at creating a discord bot whose functionalities will be decided througout the project itself",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "./node_modules/typescript/bin/tsc",
     "start": "node dist index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon build/index.js\"",
     "deploy:commands": "tsc & node build/deploy-commands.js",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/ntefa/disdaccbot#readme",
   "dependencies": {
     "@discordjs/rest": "^2.0.0",
+    "alchemy-sdk": "^2.10.0",
     "discord-api-types": "^0.37.51",
     "discord.js": "^14.12.1",
     "typescript": "^5.1.6"

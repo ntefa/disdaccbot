@@ -12,7 +12,7 @@ Before you can run the bot, ensure you have the following prerequisites installe
 
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/) (for package management)
-- [Docker](https://www.docker.com/) (optional, for containerization)
+- [Docker](https://www.docker.com/) (for containerization)
 - Discord Bot Token (obtained by creating a bot on the [Discord Developer Portal](https://discord.com/developers/applications))
 
 ### Installation
@@ -40,13 +40,12 @@ Before you can run the bot, ensure you have the following prerequisites installe
 
 ### Deployment
 
- Run the following command in the project directory:
+1. Run the following command in the project directory:
 
     ```bash
-    Copy code
-    docker build -t discord-bot .
-    docker run --name my_discord_bot -d discord-bot
-    ```
+    DISCORD_BOT_TOKEN=your_bot_token_here
+    CLIENT_ID=your client_id
+    GUILD_ID=your guild_id
 
 
 ### Contributing
