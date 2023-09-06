@@ -1,11 +1,14 @@
 import * as ping from "./ping"
 import * as users from "./users"
 import * as server from "./server"
-import * as webhook from "./webhook"
+import * as getWebhooks from "./webhook/getWebhooks"
+import * as modifyWebhook from "./webhook/modifyWebhook"
+
 
 export const commands = {
   ping,
   users,
   server,
-  webhook,
+  getWebhooks,
+  modifyWebhook
 };

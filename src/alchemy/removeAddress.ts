@@ -9,7 +9,7 @@ export async function removeAddressFromWebhook(
     await alchemy.notify.updateWebhook(webhookId, {
       removeAddresses: [addressToRemove],
     });
-    console.log(`Removed addresses from webhook: ${addressToRemove}`);
+    console.log(`Removed address ${addressToRemove} from webhook id ${webhookId}`);
   } catch (error) {
     console.error("Error removing addresses from webhook:", error);
   }

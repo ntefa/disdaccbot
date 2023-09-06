@@ -9,7 +9,7 @@ export async function addAddressToWebhook(
     await alchemy.notify.updateWebhook(webhookId, {
       addAddresses: [addressToAdd],
     });
-    console.log(`Added address to webhook: ${addressToAdd}`);
+    console.log(`Added address ${addressToAdd} from webhook id ${webhookId}`);
   } catch (error) {
     console.error("Error adding addresses to webhook:", error);
   }

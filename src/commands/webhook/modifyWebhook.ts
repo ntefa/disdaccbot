@@ -1,6 +1,6 @@
 import { SlashCommandBuilder, CommandInteraction } from 'discord.js';
 import { Alchemy, Network } from "alchemy-sdk";
-import { alchemyCommands } from "../alchemy"
+import { alchemyCommands } from "../../alchemy"
 
 // https://dashboard.alchemy.com/notify.
 const settings = {
@@ -10,8 +10,8 @@ const settings = {
 const alchemy = new Alchemy(settings);
 
 export const data = new SlashCommandBuilder()
-    .setName('webhook')
-    .setDescription('Provides information about the user.')
+    .setName('modifywebhook')
+    .setDescription('Enables adding/removing of addresses to/from webhook.')
     .addStringOption(option =>
         option
             .setName('operation')
