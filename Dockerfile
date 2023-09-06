@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install project dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of your application files to the working directory
 COPY . .
